@@ -23,4 +23,13 @@ export class TaskService {
     console.log(JSON.stringify(userdetails));
     return this.http.post<any>("/api/post", JSON.stringify(userdetails));
   }
+
+  deleteTask(taskId: string): Observable<any>{
+
+    const urlprefix = "/api/delete/";
+    const finalurl = urlprefix + taskId;
+    console.log("SENDING DELETE REQUEST FOR TASK:", taskId , finalurl);
+    return this.http.delete<any>(finalurl)
+
+  }
 }

@@ -19,9 +19,12 @@ export class UserdetailsComponent implements OnInit{
   router = inject(Router)
   taskService = inject(TaskService)
   suggestionStore = inject(SuggestionStoreService)
+
+  testFieldValue: string = "TEST VALUE ABC"
   
   ngOnInit(): void {
     this.form = this.createForm()
+
   }
 
   createForm(){
@@ -35,7 +38,7 @@ export class UserdetailsComponent implements OnInit{
       "fri": this.fb.control<boolean>(false),
       "sat": this.fb.control<boolean>(false),
       "sun": this.fb.control<boolean>(false),
-      "task_detail": this.fb.control<string>(""),
+      "task_detail": this.fb.control<string>(this.testFieldValue),
       "misc": this.fb.control<string>("")
     })
 
