@@ -2,6 +2,9 @@ import { Component, inject, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
 import { Router } from '@angular/router';
 import { Subscription } from 'rxjs';
+import { UserDetail } from '../models';
+import { TaskService } from '../task.service';
+import { SuggestionStoreService } from '../suggestion-store.service';
 
 @Component({
   selector: 'app-userdetails',
@@ -14,6 +17,8 @@ export class UserdetailsComponent implements OnInit{
   sub$!: Subscription
   fb = inject(FormBuilder)
   router = inject(Router)
+  taskService = inject(TaskService)
+  suggestionStore = inject(SuggestionStoreService)
   
   ngOnInit(): void {
     this.form = this.createForm()
@@ -41,7 +46,21 @@ export class UserdetailsComponent implements OnInit{
   }
 
   submitForm(){
-    
+    const userdetails: UserDetail = this.form.value
+    userdetails.frequency = 3
+    userdetails.epoch_date = "testeepoch"
+
+
+    this.taskService.postForm(userdetails).subscribe({
+      next:(data) => {
+        console.log(data)
+      },
+      error: (error)=>{
+        console.log(error.message)
+      }
+    });
+
+
   }
 
 
