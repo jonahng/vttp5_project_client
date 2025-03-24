@@ -29,7 +29,7 @@ export class SuggestionComponent implements OnInit {
 
 
   nextPage(){
-    this.router.navigate(['']);
+    this.router.navigate(['/userdetails']);
   }
 
 }

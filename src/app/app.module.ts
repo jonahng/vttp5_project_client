@@ -14,7 +14,8 @@ import { ReactiveFormsModule } from '@angular/forms';
 
 const appRoutes: Routes = [
   {path: '' , component: SuggestionComponent},
-
+  {path: 'userdetails' , component: UserdetailsComponent},
+  {path: 'confirm' , component: ConfirmationComponent},
   {path: '**', redirectTo: '/', pathMatch: 'full'}
 ]
 

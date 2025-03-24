@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-confirmation',
@@ -7,5 +8,14 @@ import { Component } from '@angular/core';
   styleUrl: './confirmation.component.css'
 })
 export class ConfirmationComponent {
+  router = inject(Router)
+
+
+
+
+  nextPage(){
+    this.router.navigate(['/']);
+  }
+  
 
 }

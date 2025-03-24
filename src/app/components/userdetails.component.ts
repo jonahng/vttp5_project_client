@@ -1,5 +1,6 @@
 import { Component, inject, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
+import { Router } from '@angular/router';
 import { Subscription } from 'rxjs';
 
 @Component({
@@ -12,7 +13,7 @@ export class UserdetailsComponent implements OnInit{
   form!: FormGroup
   sub$!: Subscription
   fb = inject(FormBuilder)
-  
+  router = inject(Router)
   
   ngOnInit(): void {
     this.form = this.createForm()
@@ -33,6 +34,10 @@ export class UserdetailsComponent implements OnInit{
       "misc": this.fb.control<string>("")
     })
 
+  }
+
+  nextPage(){
+    this.router.navigate(['/confirm']);
   }
 
 
