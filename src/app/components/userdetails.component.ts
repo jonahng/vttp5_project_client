@@ -40,6 +40,10 @@ export class UserdetailsComponent implements OnInit{
     this.router.navigate(['/confirm']);
   }
 
+  submitForm(){
+    
+  }
+
 
 
 

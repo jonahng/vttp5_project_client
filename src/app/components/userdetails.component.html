@@ -1,2 +1,27 @@
 <p>userdetails works!</p>
 <button (click)="nextPage()">GO TO CONFRIMATION</button>
+
+<form [formGroup]="form">
+
+    <label for="email">Your Email</label>
+    <input type = "text" id="email" placeholder="Your Email..." formControlName="email" >
+
+    <label for="telegram_id">Your Telegram ID</label>
+    <input type = "text" id="telegram_id" placeholder="Your Telegram ID" formControlName="telegram_id" >
+
+    <label for="mon">Monday</label>
+    <input type="checkbox" id="mon" formControlName="mon">
+
+    <label for="task_detail">Task Details</label>
+    <input type = "text" id="task_detail" placeholder="Your Task Details" formControlName="task_detail" >
+    <!-- USE VALUE ATTRIBUTE?? -->
+
+    <label for="task_detail">Misc</label>
+    <input type = "text" id="misc" placeholder="Misc..." formControlName="misc" >
+
+    <div>
+        <button type="submit" (click)="submitForm()">Lock it in!</button>
+    </div>
+
+
+</form>
