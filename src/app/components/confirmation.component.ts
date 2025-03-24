@@ -13,8 +13,10 @@ export class ConfirmationComponent {
 
 
 
+  
+
   nextPage(){
-    this.router.navigate(['/']);
+    this.router.navigate(['/suggestions']);
   }
   
 
