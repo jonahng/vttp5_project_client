@@ -6,6 +6,10 @@ import { AppComponent } from './app.component';
 import { SuggestionComponent } from './components/suggestion.component';
 import { provideHttpClient } from '@angular/common/http';
 import { RouterModule, Routes } from '@angular/router';
+import { UserdetailsComponent } from './components/userdetails.component';
+import { ConfirmationComponent } from './components/confirmation.component';
+import { AboutComponent } from './components/about.component';
+import { ReactiveFormsModule } from '@angular/forms';
 
 
 const appRoutes: Routes = [
@@ -18,12 +22,16 @@ const appRoutes: Routes = [
 @NgModule({
   declarations: [
     AppComponent,
-    SuggestionComponent
+    SuggestionComponent,
+    UserdetailsComponent,
+    ConfirmationComponent,
+    AboutComponent
   ],
   imports: [
     BrowserModule,
     RouterModule.forRoot(appRoutes),
-    AppRoutingModule
+    AppRoutingModule,
+    ReactiveFormsModule
   ],
   providers: [provideHttpClient()],
   bootstrap: [AppComponent]

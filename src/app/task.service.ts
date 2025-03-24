@@ -16,5 +16,6 @@ export class TaskService {
   getSuggestions() : Observable<Suggestion[]> {
     console.log("TRYING TO GET SUGGESTIONS USING HTTP")
     return this.http.get<Suggestion[]>("/api/suggestions")
+    
   }
 }
