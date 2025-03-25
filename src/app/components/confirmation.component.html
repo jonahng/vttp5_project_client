@@ -1,7 +1,11 @@
 <p>confirmation works!</p>
 <button (click)="nextPage()">CREATE ANOTHER GOAL!</button>
 
-<h1>YOUR TASK ID IS {{TASK_ID_OBJECT.task_id}}</h1>
+
+<h2>Congratulations on setting your new goal!</h2>
+<h2>A Confirmation email has been sent to you</h2>
+<h1>YOUR UNIQUE TASK ID IS {{TASK_ID_OBJECT.task_id}}</h1>
+<h1></h1>
 
 
-<button (click)="deleteTask()">DELETE TASK</button>
+<button (click)="deleteTask(TASK_ID_OBJECT.task_id)">DELETE THIS TASK {{TASK_ID_OBJECT.task_id}}</button>

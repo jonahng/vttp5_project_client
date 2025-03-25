@@ -31,8 +31,8 @@ export class ConfirmationComponent implements OnInit{
   }
 
 
-  deleteTask(){
-    this.taskService.deleteTask("97c32558").subscribe({
+  deleteTask(taskIdToDelete: string){
+    this.taskService.deleteTask(taskIdToDelete).subscribe({
       next:(data) => {
         console.log(data)
       },
