@@ -2,6 +2,7 @@ import { inject, Injectable } from '@angular/core';
 import { TaskService } from './task.service';
 import { BehaviorSubject, map, Observable } from 'rxjs';
 import { Suggestion, SuggestionList } from './models';
+import { ComponentstoreService } from './componentstore.service';
 
 @Injectable({
   providedIn: 'root'
@@ -9,6 +10,7 @@ import { Suggestion, SuggestionList } from './models';
 export class SuggestionStoreService {
 
   taskService = inject(TaskService)
+  componentStore = inject(ComponentstoreService)
 
   private suggestionSubject = new BehaviorSubject<SuggestionList>({suggestionList: []})
   suggestionList$ = this.suggestionSubject.asObservable()

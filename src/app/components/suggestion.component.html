@@ -1,5 +1,5 @@
 <p>suggestion works!</p>
-<button (click)="nextPage()">GO TO USER DETAILS</button>
+
 <br>
 
 <form [formGroup]="form">
@@ -13,9 +13,11 @@
     <button type="submit" (click)="submitForm()">Get Suggestions!</button>
 </div>
 </form>
-
+<button (click)="nextPage()">NEXT STEP: USER DETAILS</button>
 @for(suggestion of suggestionListItems$|async; track suggestion.activity){
+    <br>
     <h4>{{suggestion.activity}}</h4>>
     <h4>{{suggestion.reps}}</h4>
     <h4>{{suggestion.description}}</h4>
+    <br>
 }
