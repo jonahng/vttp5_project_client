@@ -41,6 +41,13 @@ export class ConfirmationComponent implements OnInit{
       }
     });
   }
+
+
+  reloadPage() {
+    setTimeout(()=>{
+      window.location.reload();
+    }, 100);
+}
   
 
 }
