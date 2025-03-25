@@ -26,3 +26,7 @@ export interface UserDetail{
 
 }
 
+export interface TASK_ID{
+    task_id: string
+}
+

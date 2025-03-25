@@ -1,7 +1,7 @@
 import { inject, Injectable } from '@angular/core';
 import { TaskService } from './task.service';
 import { BehaviorSubject, map, Observable } from 'rxjs';
-import { Suggestion, SuggestionList } from './models';
+import { Suggestion, SuggestionList, TASK_ID } from './models';
 import { ComponentstoreService } from './componentstore.service';
 
 @Injectable({
@@ -62,6 +62,24 @@ export class SuggestionStoreService {
       }
     })
     return chosenSuggestion;
+
+  }
+
+  getTaskId(){
+    let taskID!:TASK_ID;
+    this.componentStore.taskIds$.subscribe({
+      next: (data) =>{
+        console.log("THE TASK ID BEING READ FROM SUGGESTION STORE SERVICE",data)
+        data.forEach(
+          (task_id) =>{
+            taskID = task_id
+          }
+        )
+        //chosenSuggestion = data.values
+        //add more
+      }
+    })
+    return taskID;
 
   }
 
