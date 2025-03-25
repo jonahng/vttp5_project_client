@@ -27,7 +27,7 @@ export class SuggestionComponent implements OnInit {
   suggestionListItems$: Observable<Suggestion[]> = this.suggestionStore.getSuggestionListItems()
 
   ngOnInit(): void {
-    this.suggestionStore.initialise();
+    // original this.suggestionStore.initialise();
     this.form = this.createForm()
   }
 
@@ -51,6 +51,9 @@ export class SuggestionComponent implements OnInit {
       const prompt: string = this.form.value.prompt
       const promptWithoutSpaces = prompt.replace(" ", "_");
       console.log("THE PROMPT WITHOUT SPACES IS:", promptWithoutSpaces);
+
+      //new code
+      this.suggestionStore.initialise(promptWithoutSpaces);
 
       this.taskService.getSuggestionsWithPrompt(promptWithoutSpaces).subscribe({
         next:(data) => {

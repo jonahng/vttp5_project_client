@@ -14,8 +14,12 @@ export class SuggestionStoreService {
   suggestionList$ = this.suggestionSubject.asObservable()
 
 
-  initialise(){
-    const subscription = this.taskService.getSuggestions().subscribe({
+  //added variable
+  initialise(promptWithoutSpaces: string){
+    //const subscription = this.taskService.getSuggestions().subscribe
+    
+    const subscription = this.taskService.getSuggestionsWithPrompt(promptWithoutSpaces).subscribe
+    ({
       next: (suggestionList) => {
         suggestionList.forEach(
           (suggestion) =>{
