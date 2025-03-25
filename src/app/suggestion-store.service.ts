@@ -47,6 +47,25 @@ export class SuggestionStoreService {
   }
 
 
+  getChosenSuggestion(){
+    let chosenSuggestion!:Suggestion;
+    this.componentStore.suggestionItems$.subscribe({
+      next: (data) =>{
+        console.log("the data in getChosen Suggestion in suggestion store service:",data)
+        data.forEach(
+          (suggestion) =>{
+            chosenSuggestion = suggestion
+          }
+        )
+        //chosenSuggestion = data.values
+        //add more
+      }
+    })
+    return chosenSuggestion;
+
+  }
+
+
 
   
 

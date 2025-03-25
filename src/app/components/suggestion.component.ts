@@ -5,6 +5,7 @@ import { Router } from '@angular/router';
 import { Observable, Subscription } from 'rxjs';
 import { Suggestion } from '../models';
 import { FormBuilder, FormGroup } from '@angular/forms';
+import { ComponentstoreService } from '../componentstore.service';
 
 @Component({
   selector: 'app-suggestion',
@@ -19,6 +20,7 @@ export class SuggestionComponent implements OnInit {
   router = inject(Router)
   taskService = inject(TaskService)
   suggestionStore = inject(SuggestionStoreService)
+  componentStore = inject(ComponentstoreService)
 
   
   
@@ -65,4 +67,10 @@ export class SuggestionComponent implements OnInit {
       });
 
 }
+
+  addSuggestionToStore(suggestion: Suggestion){
+    this.componentStore.addSuggestion(suggestion)
+    console.log("ADDED SUGGESTION TO COMPONENT STORE:", suggestion)
+    
+  }
 }

@@ -2,7 +2,7 @@ import { Component, inject, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
 import { Router } from '@angular/router';
 import { Subscription } from 'rxjs';
-import { UserDetail } from '../models';
+import { Suggestion, UserDetail } from '../models';
 import { TaskService } from '../task.service';
 import { SuggestionStoreService } from '../suggestion-store.service';
 
@@ -21,8 +21,11 @@ export class UserdetailsComponent implements OnInit{
   suggestionStore = inject(SuggestionStoreService)
 
   testFieldValue: string = "TEST VALUE ABC"
+  chosenSuggestion!: Suggestion
   
   ngOnInit(): void {
+    //getting the suggestion chosen from the suggestion page
+    this.chosenSuggestion = this.suggestionStore.getChosenSuggestion()
     this.form = this.createForm()
 
   }
@@ -38,7 +41,7 @@ export class UserdetailsComponent implements OnInit{
       "fri": this.fb.control<boolean>(false),
       "sat": this.fb.control<boolean>(false),
       "sun": this.fb.control<boolean>(false),
-      "task_detail": this.fb.control<string>(this.testFieldValue),
+      "task_detail": this.fb.control<string>(this.chosenSuggestion.activity),
       "misc": this.fb.control<string>("")
     })
 
