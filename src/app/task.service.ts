@@ -19,6 +19,14 @@ export class TaskService {
     
   }
 
+  getSuggestionsWithPrompt(promptWithoutSpaces: string) : Observable<Suggestion[]> {
+    console.log("TRYING TO GET SUGGESTIONS USING HTTP WITH PROMPT", promptWithoutSpaces)
+    const urlprefix = "/api/promptsuggestions?promptwithoutspaces="
+    const finalurl = urlprefix + promptWithoutSpaces;
+    return this.http.get<Suggestion[]>(finalurl)
+    
+  }
+
   postForm(userdetails: UserDetail): Observable<any>{
     console.log(JSON.stringify(userdetails));
     return this.http.post<any>("/api/post", JSON.stringify(userdetails));

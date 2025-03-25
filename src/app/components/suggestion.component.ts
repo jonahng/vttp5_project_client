@@ -2,8 +2,9 @@ import { Component, inject, OnInit } from '@angular/core';
 import { TaskService } from '../task.service';
 import { SuggestionStoreService } from '../suggestion-store.service';
 import { Router } from '@angular/router';
-import { Observable } from 'rxjs';
+import { Observable, Subscription } from 'rxjs';
 import { Suggestion } from '../models';
+import { FormBuilder, FormGroup } from '@angular/forms';
 
 @Component({
   selector: 'app-suggestion',
@@ -12,11 +13,13 @@ import { Suggestion } from '../models';
   styleUrl: './suggestion.component.css'
 })
 export class SuggestionComponent implements OnInit {
-
-
+  form!: FormGroup
+  sub$!: Subscription
+  fb = inject(FormBuilder)
   router = inject(Router)
   taskService = inject(TaskService)
   suggestionStore = inject(SuggestionStoreService)
+
   
   
 
@@ -25,6 +28,7 @@ export class SuggestionComponent implements OnInit {
 
   ngOnInit(): void {
     this.suggestionStore.initialise();
+    this.form = this.createForm()
   }
 
 
@@ -32,4 +36,30 @@ export class SuggestionComponent implements OnInit {
     this.router.navigate(['/userdetails']);
   }
 
+
+  createForm(){
+    return this.fb.group({
+      "prompt": this.fb.control<string>(""),
+      "activity": this.fb.control<string>(""),
+      "reps": this.fb.control<string>(""),
+      "description": this.fb.control<string>(""),
+    })
+
+  }
+
+  submitForm(){
+      const prompt: string = this.form.value.prompt
+      const promptWithoutSpaces = prompt.replace(" ", "_");
+      console.log("THE PROMPT WITHOUT SPACES IS:", promptWithoutSpaces);
+
+      this.taskService.getSuggestionsWithPrompt(promptWithoutSpaces).subscribe({
+        next:(data) => {
+          console.log(data)
+        },
+        error: (error)=>{
+          console.log(error.message)
+        }
+      });
+
+}
 }

@@ -1,7 +1,21 @@
 <p>suggestion works!</p>
 <button (click)="nextPage()">GO TO USER DETAILS</button>
+<br>
+
+<form [formGroup]="form">
+
+<label for="prompt">I want to...</label>
+<input type = "text" id="prompt" placeholder="exercise?...diet?" formControlName="prompt" >
+
+
+
+<div>
+    <button type="submit" (click)="submitForm()">Get Suggestions!</button>
+</div>
+</form>
 
 @for(suggestion of suggestionListItems$|async; track suggestion){
     <h1>{{suggestion.activity}}</h1>>
     <h1>{{suggestion.reps}}</h1>
+    <h1>{{suggestion.description}}</h1>
 }
