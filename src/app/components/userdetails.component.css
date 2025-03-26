@@ -1,5 +1,5 @@
 body{
-    background-image:url('/images/helping_to_reach_goal.jpeg');
+    background-image:url('/images/details.jpg');
     background-attachment:fixed;
     background-repeat: no-repeat;
     background-size: cover;
@@ -8,23 +8,27 @@ body{
 
 
 #wholeForm {
-    padding-top: 15%;
+    padding-top: 10%;
     padding-left: 3%;
     flex: 0 0 15%;
   }
 
   #task_detail{
-    color: rgb(165, 109, 4);
-    font-size: 35px;
+    color: rgb(228, 102, 44);
+    font-size: 30px;
   }
 
 
   input{
-    font-size: 30px;
-    border-radius: 30px;
+    font-size: 20px;
+    border-radius: 25px;
   }
 
 
   label{
+    font-size: 25px;
+  }
+
+  #task_detail_label{
     font-size: 30px;
   }

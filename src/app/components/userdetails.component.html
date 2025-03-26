@@ -4,19 +4,23 @@
 <form [formGroup]="form">
 
     <div>
-        <label for="task_detail">Task Details</label>
-        <input type = "text" id="task_detail" placeholder="Your Task Details" formControlName="task_detail" size="70">
+        <label for="task_detail" id="task_detail_label">Details </label>
+        <input type = "text" id="task_detail" placeholder=" Your Task Details" formControlName="task_detail" size="70">
         </div>
     
+        <br>
 
     <div>
-    <label for="email">Your Email</label>
+    <label for="email">Email </label>
     <input type = "text" id="email" placeholder=" email..." formControlName="email" >
     </div>
 
     <div>
-    <label for="telegram_id">Your Telegram ID</label>
+    <label for="telegram_id">Telegram </label>
     <input type = "text" id="telegram_id" placeholder=" Telegram ID" formControlName="telegram_id" >
+    </div>
+    <div>
+        <br>
     </div>
 
 
@@ -45,10 +49,13 @@
     <label for="mon">  |Sunday</label>
     <input type="checkbox" id="sun" formControlName="sun">
     </div>
-   
 
-    <label for="task_detail">Misc</label>
-    <input type = "text" id="misc" placeholder="" formControlName="misc" >
+    <div>
+        <br>
+    </div>
+
+    <label for="task_detail">Misc. </label>
+    <input type = "text" id="misc" placeholder=" exta comments" formControlName="misc" >
 
     <div style="padding: 1%;">
         <button type="submit" (click)="submitForm()" mat-flat-button>Lock it in!</button>
