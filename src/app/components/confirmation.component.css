@@ -1,6 +1,16 @@
 body{
-    background-image:url('/images/guiding_to_goal.jpg');
+    background-image:url('/images/confirmation_replica.jpg');
     background-attachment:fixed;
     background-repeat: no-repeat;
     background-size: cover;
+}
+
+#confirmation{
+    padding-top: 7%;
+    padding-left: 30%;
+}
+
+#deleteButton{
+    background-color: rgb(201, 11, 11);
+    color: rgb(255, 255, 255);
 }

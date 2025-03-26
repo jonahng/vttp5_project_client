@@ -10,7 +10,7 @@
 <input type = "text" id="prompt" placeholder="exercise?...diet?" formControlName="prompt" >
 
 <div>
-    <button type="submit" (click)="submitForm()" mat-flat-button>Get Suggestions!</button>
+    <button type="submit" (click)="submitForm()" mat-flat-button>Generate Suggestions!</button>
 </div>
 </form>
             </div>
@@ -26,7 +26,7 @@
     <mat-card-title>{{suggestion.activity}}</mat-card-title>
     <h4>{{suggestion.reps}}</h4>
     <h4>{{suggestion.description}}</h4>
-    <button (click)="addSuggestionToStore(suggestion)" mat-flat-button>THIS TEMPLATE SEEMS GOOD!</button>
+    <button (click)="addSuggestionToStore(suggestion)" mat-flat-button>This Template Looks Good!</button>
     </div>
     </mat-card>
     <br>
@@ -35,8 +35,7 @@
         </div>
 
         <div class="three">
-            <h1>CLASS 3</h1>
-            <button (click)="nextPage()" mat-flat-button>NEXT STEP</button>
+            <button (click)="nextPage()" mat-flat-button>Skip Templates</button>
         </div>
 
         </section>  

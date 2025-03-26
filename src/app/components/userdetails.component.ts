@@ -27,7 +27,11 @@ export class UserdetailsComponent implements OnInit{
   TASK_ID_OBJECT: TASK_ID = {"task_id": "no task id received"}
 
   testFieldValue: string = "TEST VALUE ABC"
-  chosenSuggestion!: Suggestion
+  chosenSuggestion: Suggestion = {
+    "activity": " ",
+    "reps": " ",
+    "description": " "
+  }
 
   TASK_DETAILS: string = ""
 
@@ -42,6 +46,7 @@ export class UserdetailsComponent implements OnInit{
   }
 
   createForm(){
+    console.log("chosen suggestion.activity: ", this.chosenSuggestion.activity )
     this.TASK_DETAILS = this.chosenSuggestion.activity + ", " + this.chosenSuggestion.reps
     return this.fb.group({
       "email": this.fb.control<string>(""),

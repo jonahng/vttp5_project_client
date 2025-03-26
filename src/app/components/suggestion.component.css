@@ -1,5 +1,5 @@
 body{
-    background-image:url('/images/helping_reach_target.jpg');
+    background-image:url('/images/confirmation_replica.jpg');
     background-attachment:fixed;
     background-repeat: no-repeat;
     background-size: cover;
@@ -40,7 +40,8 @@ input{
   }
 
   .three {
-    padding-top: 15%;
+    padding-top: 20%;
+    padding-left: 2%;
     width: 15%;
     height: 100%;
     float: right;
@@ -60,5 +61,7 @@ input{
   }
   
   #right {
+    padding-left: 2%;
+    padding-right: 9%;
     flex: 1;
   }

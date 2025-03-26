@@ -71,6 +71,6 @@ export class SuggestionComponent implements OnInit {
   addSuggestionToStore(suggestion: Suggestion){
     this.componentStore.addSuggestion(suggestion)
     console.log("ADDED SUGGESTION TO COMPONENT STORE:", suggestion)
-    
+    this.nextPage()
   }
 }
