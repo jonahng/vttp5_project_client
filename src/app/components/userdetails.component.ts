@@ -28,6 +28,8 @@ export class UserdetailsComponent implements OnInit{
 
   testFieldValue: string = "TEST VALUE ABC"
   chosenSuggestion!: Suggestion
+
+  TASK_DETAILS: string = ""
   
   ngOnInit(): void {
     //getting the suggestion chosen from the suggestion page
@@ -37,6 +39,7 @@ export class UserdetailsComponent implements OnInit{
   }
 
   createForm(){
+    this.TASK_DETAILS = this.chosenSuggestion.activity + " " + this.chosenSuggestion.reps + " " 
     return this.fb.group({
       "email": this.fb.control<string>(""),
       "telegram_id": this.fb.control<string>(""),
@@ -47,7 +50,7 @@ export class UserdetailsComponent implements OnInit{
       "fri": this.fb.control<boolean>(false),
       "sat": this.fb.control<boolean>(false),
       "sun": this.fb.control<boolean>(false),
-      "task_detail": this.fb.control<string>(this.chosenSuggestion.activity),
+      "task_detail": this.fb.control<string>(this.TASK_DETAILS),
       "misc": this.fb.control<string>("")
     })
 

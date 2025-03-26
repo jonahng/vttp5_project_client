@@ -9,10 +9,13 @@
 
 
 
-<div>
+<div style="padding: 5%;">
     <button type="submit" (click)="submitForm()">Get Suggestions!</button>
 </div>
 </form>
+
+
+<br><br>
 <button (click)="nextPage()">NEXT STEP: USER DETAILS</button>
 @for(suggestion of suggestionListItems$|async; track suggestion.activity){
     <br>
