@@ -32,3 +32,7 @@ body{
   #task_detail_label{
     font-size: 30px;
   }
+
+  #confirmationButton{
+    padding-left: 3%;
+  }

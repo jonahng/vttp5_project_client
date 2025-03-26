@@ -6,11 +6,11 @@
             <div id="left" >
 <form [formGroup]="form">
 
-<label for="prompt">I want to...</label>
-<input type = "text" id="prompt" placeholder="exercise?...diet?" formControlName="prompt" >
+<label for="prompt">Goal: I want to...</label>
+<input type = "text" id="prompt" placeholder=" exercise? lose weight?" formControlName="prompt" >
 
 <div>
-    <button type="submit" (click)="submitForm()" mat-flat-button>Generate Suggestions!</button>
+    <button type="submit" (click)="submitForm()" mat-flat-button>Generate Goal Details!</button>
 </div>
 </form>
             </div>
@@ -26,7 +26,7 @@
     <mat-card-title>{{suggestion.activity}}</mat-card-title>
     <h4>{{suggestion.reps}}</h4>
     <h4>{{suggestion.description}}</h4>
-    <button (click)="addSuggestionToStore(suggestion)" mat-flat-button>This Template Looks Good!</button>
+    <button (click)="addSuggestionToStore(suggestion)" mat-flat-button>This Goal Looks Good!</button>
     </div>
     </mat-card>
     <br>
@@ -35,7 +35,7 @@
         </div>
 
         <div class="three">
-            <button (click)="nextPage()" mat-flat-button>Skip Templates</button>
+            <button (click)="nextPage()" mat-flat-button>Skip Goal Suggestions</button>
         </div>
 
         </section>  

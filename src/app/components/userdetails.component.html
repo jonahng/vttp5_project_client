@@ -5,7 +5,7 @@
 
     <div>
         <label for="task_detail" id="task_detail_label">Details </label>
-        <input type = "text" id="task_detail" placeholder=" Your Task Details" formControlName="task_detail" size="70">
+        <input type = "text" id="task_detail" placeholder=" Your Goal Details" formControlName="task_detail" size="70">
         </div>
     
         <br>
@@ -58,14 +58,14 @@
     <input type = "text" id="misc" placeholder=" exta comments" formControlName="misc" >
 
     <div style="padding: 1%;">
-        <button type="submit" (click)="submitForm()" mat-flat-button>Lock it in!</button>
+        <button type="submit" (click)="submitForm()" mat-flat-button>LOCK IN GOAL AND REMINDER DETAILS!</button>
     </div>
 
 </form>
 </div>
 
 
-<div *ngIf="this.TASK_ID_OBJECT.task_id.length<10">
+<div *ngIf="this.TASK_ID_OBJECT.task_id.length<10" id="confirmationButton">
 <h4>Your task has been recorded successfully!</h4>
 <button (click)="nextPage()" mat-flat-button>GO TO CONFRIMATION</button>
 </div>
