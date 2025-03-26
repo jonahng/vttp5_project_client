@@ -1,11 +1,11 @@
 
 <body>
-<div>
+<div id="wholeForm">
 <form [formGroup]="form">
 
     <div>
         <label for="task_detail">Task Details</label>
-        <input type = "text" id="task_detail" placeholder="Your Task Details" formControlName="task_detail" size="40">
+        <input type = "text" id="task_detail" placeholder="Your Task Details" formControlName="task_detail" size="70">
         </div>
     
 
@@ -20,29 +20,29 @@
     </div>
 
 
-    
+
     <label for="dayboxes">Days to receive reminders from Telegram bot</label>
     <div class="dayboxes">
     
-    <label for="mon">Monday</label>
+    <label for="mon">  |Monday</label>
     <input type="checkbox" id="mon" formControlName="mon">
 
-    <label for="mon">Tuesday</label>
+    <label for="mon">  |Tuesday</label>
     <input type="checkbox" id="tue" formControlName="tue">
 
-    <label for="mon">Wednesday</label>
+    <label for="mon">  |Wednesday</label>
     <input type="checkbox" id="wed" formControlName="wed">
 
-    <label for="mon">Thursday</label>
+    <label for="mon">  |Thursday</label>
     <input type="checkbox" id="thu" formControlName="thu">
 
-    <label for="mon">Friday</label>
+    <label for="mon">  |Friday</label>
     <input type="checkbox" id="fri" formControlName="fri">
 
-    <label for="mon">Saturday</label>
+    <label for="mon">  |Saturday</label>
     <input type="checkbox" id="sat" formControlName="sat">
 
-    <label for="mon">Sunday</label>
+    <label for="mon">  |Sunday</label>
     <input type="checkbox" id="sun" formControlName="sun">
     </div>
    
