@@ -10,6 +10,7 @@ import { UserdetailsComponent } from './components/userdetails.component';
 import { ConfirmationComponent } from './components/confirmation.component';
 import { AboutComponent } from './components/about.component';
 import { ReactiveFormsModule } from '@angular/forms';
+import { MaterialModule } from './material.module';
 
 
 const appRoutes: Routes = [
@@ -33,7 +34,8 @@ const appRoutes: Routes = [
     BrowserModule,
     RouterModule.forRoot(appRoutes),
     AppRoutingModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    MaterialModule
   ],
   providers: [provideHttpClient()],
   bootstrap: [AppComponent]
