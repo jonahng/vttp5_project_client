@@ -30,6 +30,9 @@ export class UserdetailsComponent implements OnInit{
   chosenSuggestion!: Suggestion
 
   TASK_DETAILS: string = ""
+
+
+
   
   ngOnInit(): void {
     //getting the suggestion chosen from the suggestion page
@@ -73,13 +76,14 @@ export class UserdetailsComponent implements OnInit{
         //this.receivedTaskId = data.task_id
         this.TASK_ID_OBJECT.task_id = data.task_id
         console.log("THE TASK ID OBJECT IS NOW:", this.TASK_ID_OBJECT)
+        this.addTASKIDtoStore();
         
       },
       error: (error)=>{
         console.log(error.message)
       }
     });
-    console.log("SAVING TASK ID TO COMPONENT STORE:", this.TASK_ID_OBJECT.task_id)
+    //console.log("SAVING TASK ID TO COMPONENT STORE:", this.TASK_ID_OBJECT.task_id)
     
   }
 

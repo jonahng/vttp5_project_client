@@ -1,17 +1,20 @@
-<p>userdetails works!</p>
-<button (click)="nextPage()">GO TO CONFRIMATION</button>
 
+
+<div>
 <form [formGroup]="form">
 
+    <div>
     <label for="email">Your Email</label>
     <input type = "text" id="email" placeholder="Your Email..." formControlName="email" >
+    </div>
 
+    <div>
     <label for="telegram_id">Your Telegram ID</label>
     <input type = "text" id="telegram_id" placeholder="Your Telegram ID" formControlName="telegram_id" >
-
+    </div>
 
     
-    
+    <div>
     <label for="mon">Monday</label>
     <input type="checkbox" id="mon" formControlName="mon">
 
@@ -32,21 +35,21 @@
 
     <label for="mon">Sunday</label>
     <input type="checkbox" id="sun" formControlName="sun">
-
+    </div>
    
+    <div>
     <label for="task_detail">Task Details</label>
     <input type = "text" id="task_detail" placeholder="Your Task Details" formControlName="task_detail">
-    <!-- USE VALUE ATTRIBUTE?? -->
+    </div>
 
     <label for="task_detail">Misc</label>
     <input type = "text" id="misc" placeholder="Misc..." formControlName="misc" >
 
-    <div style="padding: 5%;">
-        <button type="submit" (click)="submitForm()">Lock it in!</button>
+    <div style="padding: 1%;">
+        <button type="submit" (click)="submitForm()" mat-flat-button>Lock it in!</button>
     </div>
 
-
 </form>
+</div>
 
-
-<button (click)="addTASKIDtoStore()">ADD TASK ID TO STORE</button>
+<button (click)="nextPage()" mat-flat-button>GO TO CONFRIMATION</button>

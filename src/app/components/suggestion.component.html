@@ -1,27 +1,26 @@
-<p>suggestion works!</p>
-
-<br>
 
 <form [formGroup]="form">
 
 <label for="prompt">I want to...</label>
 <input type = "text" id="prompt" placeholder="exercise?...diet?" formControlName="prompt" >
 
-
-
-<div style="padding: 5%;">
-    <button type="submit" (click)="submitForm()">Get Suggestions!</button>
+<div>
+    <button type="submit" (click)="submitForm()" mat-flat-button>Get Suggestions!</button>
 </div>
 </form>
 
 
 <br><br>
-<button (click)="nextPage()">NEXT STEP: USER DETAILS</button>
+<button (click)="nextPage()" mat-flat-button>NEXT STEP: USER DETAILS</button>
 @for(suggestion of suggestionListItems$|async; track suggestion.activity){
     <br>
-    <h4>{{suggestion.activity}}</h4>>
+    <mat-card>
+    <div style="border: 3px solid blue;">
+    <mat-card-title>{{suggestion.activity}}</mat-card-title>
     <h4>{{suggestion.reps}}</h4>
     <h4>{{suggestion.description}}</h4>
-    <button (click)="addSuggestionToStore(suggestion)">THIS TEMPLATE SEEMS GOOD!</button>
+    <button (click)="addSuggestionToStore(suggestion)" mat-flat-button>THIS TEMPLATE SEEMS GOOD!</button>
+    </div>
+    </mat-card>
     <br>
 }
