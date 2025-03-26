@@ -42,7 +42,7 @@ export class UserdetailsComponent implements OnInit{
   }
 
   createForm(){
-    this.TASK_DETAILS = this.chosenSuggestion.activity + " " + this.chosenSuggestion.reps + " " 
+    this.TASK_DETAILS = this.chosenSuggestion.activity + ", " + this.chosenSuggestion.reps
     return this.fb.group({
       "email": this.fb.control<string>(""),
       "telegram_id": this.fb.control<string>(""),
