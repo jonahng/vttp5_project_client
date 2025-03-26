@@ -4,3 +4,51 @@ body{
     background-repeat: no-repeat;
     background-size: cover;
 }
+
+
+
+.container {
+    width: 80%;
+    height: 80%;
+    background: aqua;
+    margin: auto;
+    padding: 1%;
+  }
+  
+  .one {
+    width: 15%;
+    height: 100%;
+    background: red;
+    float: left;
+  }
+  
+  .two {
+    width: 60%;
+    margin-left: 15%;
+    height: 100%;
+    background: black;
+  }
+
+  .three {
+    padding-top: 15%;
+    width: 15%;
+    height: 100%;
+    float: right;
+  }
+
+  #wrapper {
+    display: flex;
+  }
+  
+  #left {
+    padding-top: 15%;
+    flex: 0 0 15%;
+  }
+
+  #middle {
+    flex: 1;
+  }
+  
+  #right {
+    flex: 1;
+  }

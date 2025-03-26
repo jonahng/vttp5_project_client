@@ -1,4 +1,9 @@
 <body>
+
+        <section id="wrapper">
+
+
+            <div id="left" >
 <form [formGroup]="form">
 
 <label for="prompt">I want to...</label>
@@ -8,10 +13,12 @@
     <button type="submit" (click)="submitForm()" mat-flat-button>Get Suggestions!</button>
 </div>
 </form>
+            </div>
 
 
+            <div id="right">
 <br><br>
-<button (click)="nextPage()" mat-flat-button>NEXT STEP: USER DETAILS</button>
+
 @for(suggestion of suggestionListItems$|async; track suggestion.activity){
     <br>
     <mat-card>
@@ -24,6 +31,15 @@
     </mat-card>
     <br>
 }
+
+        </div>
+
+        <div class="three">
+            <h1>CLASS 3</h1>
+            <button (click)="nextPage()" mat-flat-button>NEXT STEP</button>
+        </div>
+
+        </section>  
 
 
 </body>
